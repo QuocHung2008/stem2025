@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lối Sống Xanh Bền Vững</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #a8e063 0%, #56ab2f 100%);
+            color: #333;
+        }
+        header {
+            background: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #56ab2f;
+            font-size: 2em;
+        }
+        .tagline {
+            color: #666;
+            margin-top: 10px;
+            font-style: italic;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .product {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+        .product:hover {
+            transform: translateY(-10px);
+        }
+        .product h3 {
+            color: #56ab2f;
+            margin-bottom: 15px;
+        }
+        .product p {
+            color: #666;
+            line-height: 1.6;
+        }
+        .price {
+            color: #3d7a1f;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        .badge {
+            display: inline-block;
+            background: #a8e063;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🌱 Sống Xanh - Sống Khỏe</h1>
+        <p class="tagline">Sống xanh không khó, chỉ cần bạn bắt đầu</p>
+    </header>
+    
+    <div class="container">
+        <div class="products">
+            <div class="product">
+                <h3>Dầu Gội Thảo Dược Dạng Bánh</h3>
+                <p>100% thuần chay, không hóa chất độc hại. Một viên dùng được 2-3 tháng, tiết kiệm và thân thiện môi trường.</p>
+                <span class="badge">Vegan</span>
+                <div class="price">149.000đ</div>
+            </div>
+            
+            <div class="product">
+                <h3>Bộ Bàn Chải Tre & Ống Hút</h3>
+                <p>Thay thế nhựa bằng tre tự nhiên. Phân hủy sinh học hoàn toàn, an toàn cho sức khỏe gia đình.</p>
+                <span class="badge">Eco-Friendly</span>
+                <div class="price">99.000đ</div>
+            </div>
+            
+            <div class="product">
+                <h3>Ly Giữ Nhiệt Khắc Tên</h3>
+                <p>Inox 304 cao cấp, giữ nhiệt 12 giờ. Thiết kế cá nhân hóa, giảm rác thải ly nhựa một lần.</p>
+                <span class="badge">Personalized</span>
+                <div class="price">299.000đ</div>
+            </div>
+            
+            <div class="product">
+                <h3>Túi Vải Canvas Thời Trang</h3>
+                <p>Vải cotton hữu cơ, bền đẹp, chịu lực tốt. Thay thế túi nilon, phong cách và bảo vệ môi trường.</p>
+                <span class="badge">Organic</span>
+                <div class="price">159.000đ</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Tech - Công Nghệ Cho Thú Cưng</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            color: #333;
+        }
+        header {
+            background: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #ff6b6b;
+            font-size: 2em;
+        }
+        .tagline {
+            color: #666;
+            margin-top: 10px;
+            font-style: italic;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .product {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+        .product:hover {
+            transform: translateY(-10px);
+        }
+        .product h3 {
+            color: #ff6b6b;
+            margin-bottom: 15px;
+        }
+        .product p {
+            color: #666;
+            line-height: 1.6;
+        }
+        .price {
+            color: #fc8f6f;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🐾 Pet Tech Store</h1>
+        <p class="tagline">Giải pháp cho người bận rộn yêu thú cưng</p>
+    </header>
+    
+    <div class="container">
+        <div class="products">
+            <div class="product">
+                <h3>Máy Cho Ăn Tự Động Có Camera</h3>
+                <p>Cho ăn đúng giờ qua app điện thoại. Camera HD xem thú cưng mọi lúc, ghi âm gọi tên khi cho ăn.</p>
+                <div class="price">1.890.000đ</div>
+            </div>
+            
+            <div class="product">
+                <h3>Ba Lô Vận Chuyển Phi Hành Gia</h3>
+                <p>Thiết kế cửa sổ trong suốt, thoáng khí tối đa. Chắc chắn và phong cách, thú cưng thích mê.</p>
+                <div class="price">599.000đ</div>
+            </div>
+            
+            <div class="product">
+                <h3>Vòng Cổ Định Vị GPS</h3>
+                <p>Theo dõi vị trí thời gian thực. Pin 7 ngày, chống nước IP67, yên tâm cho thú cưng tự do.</p>
+                <div class="price">1.290.000đ</div>
+            </div>
+            
+            <div class="product">
+                <h3>Đài Phun Nước Uống Tự Động</h3>
+                <p>Nước luôn tuần hoàn, sạch và tươi mát. Động cơ siêu êm, khuyến khích thú cưng uống nhiều nước hơn.</p>
+                <div class="price">459.000đ</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

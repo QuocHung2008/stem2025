@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quà Tặng Cá Nhân Hóa</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: #333;
+        }
+        header {
+            background: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #f5576c;
+            font-size: 2em;
+        }
+        .tagline {
+            color: #666;
+            margin-top: 10px;
+            font-style: italic;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .product {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+        .product:hover {
+            transform: translateY(-10px);
+        }
+        .product h3 {
+            color: #f5576c;
+            margin-bottom: 15px;
+        }
+        .product p {
+            color: #666;
+            line-height: 1.6;
+        }
+        .price {
+            color: #f093fb;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        .special {
+            background: #fff5f7;
+            border-left: 4px solid #f5576c;
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>💝 Quà Tặng Độc Nhất</h1>
+        <p class="tagline">Món quà duy nhất dành cho người đặc biệt</p>
+    </header>
+    
+    <div class="container">
+        <div class="products">
+            <div class="product">
+                <h3>Đèn Ngủ 3D Khắc Chân Dung</h3>
+                <p>In hình chân dung lên đèn LED 3D. Ánh sáng ấm áp, thiết kế độc đáo làm quà tặng sinh nhật, kỷ niệm.</p>
+                <div class="special">✨ Tặng kèm hộp quà sang trọng</div>
+                <div class="price">399.000đ</div>
+            </div>
+            
+            <div class="product">
+                <h3>Ví Da Khắc Tên Cao Cấp</h3>
+                <p>Da bò thật 100%, khắc tên/chữ ký bằng laser. Sang trọng, bền đẹp theo năm tháng, quà tặng ý nghĩa.</p>
+                <div class="special">✨ Miễn phí khắc tên</div>
+                <div class="price">649.000đ</div>
+            </div>
+            
+            <div class="product">
+                <h3>Tranh Ghép Hình Puzzle Ảnh</h3>
+                <p>In ảnh kỷ niệm lên puzzle 1000 mảnh. Vừa chơi vừa nhớ, hoàn thành để treo tường trang trí.</p>
+                <div class="special">✨ Chất liệu gỗ cao cấp</div>
+                <div class="price">289.000đ</div>
+            </div>
+            
+            <div class="product">
+                <h3>Vòng Cổ Khắc Ngày Kỷ Niệm</h3>
+                <p>Bạc 925 nguyên chất, khắc ngày đặc biệt. Thiết kế tối giản, thanh lịch, thể hiện tình cảm sâu sắc.</p>
+                <div class="special">✨ Bảo hành vĩnh viễn</div>
+                <div class="price">799.000đ</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
