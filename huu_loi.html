@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pet Tech - Công Nghệ Cho Thú Cưng</title>
+    <title>Quà Tặng Cá Nhân Hóa - Khắc Tên, Khắc Tâm</title>
     <style>
         * {
             margin: 0;
@@ -11,92 +11,425 @@
             box-sizing: border-box;
         }
         body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-            color: #333;
+            font-family: 'Playfair Display', 'Georgia', serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: #f0f0f0;
+            line-height: 1.6;
         }
         header {
-            background: white;
-            padding: 20px;
+            background: linear-gradient(135deg, #8b0a50 0%, #4a0e4e 50%, #1a1a2e 100%);
+            padding: 80px 20px 100px;
             text-align: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+            border-bottom: 5px solid #ffd700;
+        }
+        header::before, header::after {
+            content: '✨';
+            position: absolute;
+            font-size: 80px;
+            opacity: 0.15;
+            animation: sparkle 3s ease-in-out infinite;
+        }
+        header::before {
+            top: 20px;
+            left: 10%;
+        }
+        header::after {
+            bottom: 30px;
+            right: 15%;
+            animation-delay: 1.5s;
+        }
+        @keyframes sparkle {
+            0%, 100% { opacity: 0.1; transform: scale(1) rotate(0deg); }
+            50% { opacity: 0.3; transform: scale(1.2) rotate(180deg); }
+        }
+        .header-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
         }
         h1 {
-            color: #ff6b6b;
-            font-size: 2em;
+            color: #ffd700;
+            font-size: clamp(2.2em, 5vw, 4.5em);
+            margin-bottom: 20px;
+            letter-spacing: 4px;
+            text-shadow: 3px 3px 10px rgba(0,0,0,0.7);
+            font-weight: 700;
         }
         .tagline {
-            color: #666;
-            margin-top: 10px;
+            color: #ffd1dc;
+            font-size: clamp(1em, 2.5vw, 1.5em);
             font-style: italic;
+            margin-bottom: 35px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+        .intro {
+            background: linear-gradient(135deg, rgba(139, 10, 80, 0.4) 0%, rgba(74, 14, 78, 0.4) 100%);
+            border: 2px solid #ffd700;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 900px;
+            margin: 35px auto 0;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 40px rgba(255, 215, 0, 0.2);
+        }
+        .intro h3 {
+            color: #ffd700;
+            margin-bottom: 18px;
+            font-size: 1.6em;
+            letter-spacing: 2px;
+        }
+        .intro p {
+            color: #e0e0e0;
+            line-height: 1.9;
+            font-size: 1.05em;
+            margin-bottom: 15px;
         }
         .container {
-            max-width: 1200px;
-            margin: 40px auto;
+            max-width: 1400px;
+            margin: 70px auto;
             padding: 0 20px;
+        }
+        .section-title {
+            text-align: center;
+            font-size: clamp(2em, 4vw, 3em);
+            color: #ffd700;
+            margin-bottom: 60px;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
         }
         .products {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+            gap: 40px;
         }
         .product {
-            background: white;
-            border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-            transition: transform 0.3s;
+            background: linear-gradient(145deg, #2a2a3e 0%, #1f1f2e 100%);
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.5), 0 0 30px rgba(255, 215, 0, 0.1);
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            position: relative;
+        }
+        .product::before {
+            content: '💝';
+            position: absolute;
+            font-size: 120px;
+            opacity: 0.05;
+            top: -20px;
+            right: -20px;
+            z-index: 0;
+            transform: rotate(15deg);
         }
         .product:hover {
-            transform: translateY(-10px);
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 50px rgba(255, 215, 0, 0.3);
+            border-color: #ffd700;
+        }
+        .product-img {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+            background: linear-gradient(135deg, #4a0e4e 0%, #8b0a50 100%);
+        }
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s;
+            filter: brightness(0.9);
+        }
+        .product:hover .product-img img {
+            transform: scale(1.15);
+            filter: brightness(1);
+        }
+        .ribbon {
+            position: absolute;
+            top: 20px;
+            right: -35px;
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+            color: #1a1a2e;
+            padding: 10px 45px;
+            font-size: 0.85em;
+            font-weight: 900;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            transform: rotate(45deg);
+            z-index: 2;
+            letter-spacing: 1px;
+        }
+        .luxury-badge {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            background: rgba(26, 26, 46, 0.9);
+            color: #ffd700;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 700;
+            border: 2px solid #ffd700;
+            z-index: 2;
+        }
+        .product-info {
+            padding: 35px;
+            position: relative;
+            z-index: 1;
         }
         .product h3 {
-            color: #ff6b6b;
-            margin-bottom: 15px;
+            color: #ffd700;
+            margin-bottom: 18px;
+            font-size: 1.6em;
+            letter-spacing: 1px;
+            font-weight: 700;
         }
         .product p {
-            color: #666;
-            line-height: 1.6;
+            color: #d0d0d0;
+            line-height: 1.9;
+            margin-bottom: 20px;
+            font-size: 1.02em;
+        }
+        .special {
+            background: rgba(255, 215, 0, 0.1);
+            border-left: 4px solid #ffd700;
+            padding: 15px 18px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            color: #ffd1dc;
+            font-size: 0.95em;
+            font-weight: 600;
+        }
+        .features {
+            list-style: none;
+            margin-bottom: 25px;
+            padding: 15px;
+            background: rgba(255, 215, 0, 0.05);
+            border-radius: 10px;
+        }
+        .features li {
+            color: #b8b8c8;
+            padding: 8px 0;
+            padding-left: 28px;
+            position: relative;
+            font-size: 0.95em;
+        }
+        .features li::before {
+            content: '♦';
+            position: absolute;
+            left: 0;
+            color: #ffd700;
+            font-size: 16px;
+        }
+        .price-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 25px;
+            border-top: 2px solid rgba(255, 215, 0, 0.3);
         }
         .price {
-            color: #fc8f6f;
-            font-size: 1.5em;
-            font-weight: bold;
-            margin-top: 15px;
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+            color: #1a1a2e;
+            font-size: 2em;
+            font-weight: 900;
+            padding: 12px 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
+        }
+        .buy-btn {
+            background: linear-gradient(135deg, #8b0a50 0%, #4a0e4e 100%);
+            color: #ffd700;
+            padding: 15px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.4s;
+            border: 2px solid #ffd700;
+            cursor: pointer;
+            font-size: 1em;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 20px rgba(139, 10, 80, 0.4);
+        }
+        .buy-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(255, 215, 0, 0.5);
+            background: linear-gradient(135deg, #a01060 0%, #5a1e5e 100%);
+        }
+        @media (max-width: 768px) {
+            header {
+                padding: 60px 20px 80px;
+            }
+            .intro {
+                padding: 25px;
+            }
+            .products {
+                gap: 30px;
+            }
+            .product-img {
+                height: 240px;
+            }
+            .product-info {
+                padding: 25px;
+            }
+            .price {
+                font-size: 1.6em;
+                padding: 10px 15px;
+            }
+            .buy-btn {
+                padding: 12px 22px;
+                font-size: 0.9em;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>🐾 Pet Tech Store</h1>
-        <p class="tagline">Giải pháp cho người bận rộn yêu thú cưng</p>
+        <div class="header-content">
+            <h1>✨ EXCLUSIVE GIFTS ✨</h1>
+            <p class="tagline">Khắc tên, khắc tâm - Món quà chỉ có một không hai</p>
+            <div class="intro">
+                <h3>🎁 Tại Sao Chọn Quà Cá Nhân Hóa?</h3>
+                <p>Trong thời đại mọi thứ đều sản xuất hàng loạt, một món quà được khắc tên, khắc ngày kỷ niệm là cách bạn thể hiện sự quan tâm đặc biệt. Không chỉ là vật phẩm, đó là câu chuyện, là kỷ niệm, là tình cảm được lưu giữ mãi mãi.</p>
+                <p><strong>Chúng tôi sử dụng công nghệ khắc laser tiên tiến nhất, đảm bảo mỗi sản phẩm đều hoàn hảo đến từng chi tiết. Bảo hành trọn đời, đổi trả miễn phí nếu không hài lòng 100%.</strong></p>
+            </div>
+        </div>
     </header>
     
     <div class="container">
+        <h2 class="section-title">💎 Bộ Sưu Tập Cao Cấp</h2>
         <div class="products">
             <div class="product">
-                <h3>Máy Cho Ăn Tự Động Có Camera</h3>
-                <p>Cho ăn đúng giờ qua app điện thoại. Camera HD xem thú cưng mọi lúc, ghi âm gọi tên khi cho ăn.</p>
-                <div class="price">1.890.000đ</div>
+                <div class="product-img">
+                    <img src="https://hoaphatlaser.com/wp-content/uploads/2020/12/z2086648316346_040bbcff471703aea475992b220f67a7-1024x1024.jpg" alt="Đèn ngủ 3D">
+                    <span class="ribbon">HOT</span>
+                    <span class="luxury-badge">Handmade</span>
+                </div>
+                <div class="product-info">
+                    <h3>Đèn Ngủ 3D Khắc Chân Dung</h3>
+                    <p>Công nghệ in 3D tiên tiến kết hợp khắc laser, biến ảnh chân dung thành tác phẩm nghệ thuật phát sáng. Ánh sáng LED ấm áp, 16 màu thay đổi qua remote. Món quà độc nhất cho người đặc biệt.</p>
+                    <div class="special">✨ Miễn phí thiết kế & hiệu chỉnh ảnh chuyên nghiệp</div>
+                    <ul class="features">
+                        <li>Kính mica cao cấp 8mm, khắc laser sắc nét</li>
+                        <li>Đế gỗ óc chó tự nhiên có khắc tên</li>
+                        <li>Hộp quà gỗ sang trọng + thiệp viết tay</li>
+                    </ul>
+                    <div class="price-section">
+                        <div class="price">499.000đ</div>
+                        <button class="buy-btn">Đặt Hàng</button>
+                    </div>
+                </div>
             </div>
             
             <div class="product">
-                <h3>Ba Lô Vận Chuyển Phi Hành Gia</h3>
-                <p>Thiết kế cửa sổ trong suốt, thoáng khí tối đa. Chắc chắn và phong cách, thú cưng thích mê.</p>
-                <div class="price">599.000đ</div>
+                <div class="product-img">
+                    <img src="https://quatangep.vn/wp-content/uploads/2021/04/vi-da-khac-ten-cao-cap.jpg" alt="Ví da">
+                    <span class="ribbon">LUXURY</span>
+                    <span class="luxury-badge">Genuine Leather</span>
+                </div>
+                <div class="product-info">
+                    <h3>Ví Da Bò Thật Khắc Tên Cao Cấp</h3>
+                    <p>Ví da bò Ý nguyên tấm, thuộc thủ công truyền thống 6 tháng. Khắc laser tên hoặc chữ ký sâu 0.3mm, không phai mờ theo thời gian. Càng dùng càng đẹp, bền 10-15 năm.</p>
+                    <div class="special">✨ Tặng kèm hộp gỗ quý + bảo dưỡng miễn phí trọn đời</div>
+                    <ul class="features">
+                        <li>Da bò full grain, vân tự nhiên độc nhất</li>
+                        <li>8 ngăn thẻ, 2 ngăn tiền, 1 ngăn ảnh</li>
+                        <li>Chống RFID bảo mật, may tay chỉ nilon siêu bền</li>
+                    </ul>
+                    <div class="price-section">
+                        <div class="price">799.000đ</div>
+                        <button class="buy-btn">Đặt Hàng</button>
+                    </div>
+                </div>
             </div>
             
             <div class="product">
-                <h3>Vòng Cổ Định Vị GPS</h3>
-                <p>Theo dõi vị trí thời gian thực. Pin 7 ngày, chống nước IP67, yên tâm cho thú cưng tự do.</p>
-                <div class="price">1.290.000đ</div>
+                <div class="product-img">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTm-RTICJ8RODT3ZsUyHGmpsd4pRMWWRBK61Q&s" alt="Tranh puzzle">
+                    <span class="ribbon">UNIQUE</span>
+                    <span class="luxury-badge">Custom Art</span>
+                </div>
+                <div class="product-info">
+                    <h3>Tranh Ghép Hình Puzzle Từ Ảnh</h3>
+                    <p>In UV chất lượng cao trên puzzle gỗ 1000 mảnh. Mỗi mảnh ghép là một khoảnh khắc kỷ niệm. Hoàn thành để có bức tranh treo tường tuyệt đẹp, đính kèm keo dán chuyên dụng.</p>
+                    <div class="special">✨ Tặng khung tranh gỗ sồi + chứng nhận in hình</div>
+                    <ul class="features">
+                        <li>Gỗ MDF cao cấp 3mm, cắt chính xác</li>
+                        <li>In màu sRGB, độ phân giải 300 DPI</li>
+                        <li>Kích thước hoàn thành 50x70cm</li>
+                    </ul>
+                    <div class="price-section">
+                        <div class="price">389.000đ</div>
+                        <button class="buy-btn">Đặt Hàng</button>
+                    </div>
+                </div>
             </div>
             
             <div class="product">
-                <h3>Đài Phun Nước Uống Tự Động</h3>
-                <p>Nước luôn tuần hoàn, sạch và tươi mát. Động cơ siêu êm, khuyến khích thú cưng uống nhiều nước hơn.</p>
-                <div class="price">459.000đ</div>
+                <div class="product-img">
+                    <img src="https://product.hstatic.net/200000356839/product/vcard7550-07_1346123780a64c138eeffb4a3ca2811c_master.png" alt="Vòng cổ bạc">
+                    <span class="ribbon">FOREVER</span>
+                    <span class="luxury-badge">925 Silver</span>
+                </div>
+                <div class="product-info">
+                    <h3>Vòng Cổ Bạc 925</h3>
+                    <p>Vòng cổ bạc 925 được chế tác từ bạc chuẩn 92.5%, sáng bóng, bền màu và an toàn cho da. Thiết kế thanh lịch, tôn lên vẻ đẹp tinh tế cho người đeo, phù hợp mọi dịp từ đi làm, đi chơi đến sự kiện.</p>
+                    <div class="special">✨ Bảo hành vĩnh viễn + đánh bóng miễn phí trọn đời</div>
+                    <ul class="features">
+                        <li>Mặt tròn 2cm, dây 45cm điều chỉnh</li>
+                        <li>Đóng hộp nhung cao cấp sang trọng</li>
+                        <li>Giấy chứng nhận bạc thật kèm tem chống giả</li>
+                    </ul>
+                    <div class="price-section">
+                        <div class="price">899.000đ</div>
+                        <button class="buy-btn">Đặt Hàng</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product">
+                <div class="product-img">
+                    <img src="https://www.gento.vn/wp-content/uploads/2021/04/moc-khoa-da-handmade-P70016.jpg" alt="Móc khóa">
+                    <span class="luxury-badge">Premium Gift</span>
+                </div>
+                <div class="product-info">
+                    <h3>Móc Khóa Da Bò</h3>
+                    <p>Móc khóa da bò cao cấp được làm từ da bò thật 100%, mang lại cảm giác mềm mại, chắc chắn và độ bền vượt trội theo thời gian. Thiết kế tối giản nhưng tinh tế, phù hợp cho cả nam và nữ, dễ dàng kết hợp với nhiều phong cách khác nhau.</p>
+                    <div class="special">✨ Tặng kèm bản đồ mini địa điểm + thiệp giải thích</div>
+                    <ul class="features">
+                        <li>Da bò Ý Crazy Horse, chống nước tốt</li>
+                        <li>Thiết kế tối giản nhưng tinh tế</li>
+                        <li>Kích thước 8x3cm, vừa túi quần/túi xách</li>
+                    </ul>
+                    <div class="price-section">
+                        <div class="price">249.000đ</div>
+                        <button class="buy-btn">Đặt Hàng</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product">
+                <div class="product-img">
+                    <img src="https://henryjewels.com/uploads/2018/05/nhan-titan-khac-chu32.jpg" alt="Nhẫn khắc tên">
+                    <span class="ribbon">BEST GIFT</span>
+                    <span class="luxury-badge">Titanium</span>
+                </div>
+                <div class="product-info">
+                    <h3>Nhẫn Titanium Khắc Chữ</h3>
+                    <p>Nhẫn titan y tế, siêu nhẹ, không gây dị ứng, bền vĩnh viễn. Khắc chữ ký tay viết của người thân yêu bên trong hoặc bên ngoài. Món quà cực kỳ cá nhân và đầy cảm xúc.</p>
+                    <div class="special">✨ Miễn phí đo size tại nhà + đổi size trong 30 ngày</div>
+                    <ul class="features">
+                        <li>Titan grade 5, chống trầy xước tối đa</li>
+                        <li>Khắc laser chữ ký thật, không in hoặc dập</li>
+                        <li>Nhiều màu: Bạc, Vàng hồng, Đen, Xanh</li>
+                    </ul>
+                    <div class="price-section">
+                        <div class="price">699.000đ</div>
+                        <button class="buy-btn">Đặt Hàng</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

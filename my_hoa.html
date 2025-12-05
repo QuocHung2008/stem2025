@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quà Tặng Cá Nhân Hóa</title>
+    <title>Sản Phẩm Xanh & Lối Sống Bền Vững</title>
     <style>
         * {
             margin: 0;
@@ -11,103 +11,348 @@
             box-sizing: border-box;
         }
         body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            color: #333;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: linear-gradient(to bottom, #f1f8f4 0%, #e8f5e9 100%);
+            color: #2d5016;
         }
         header {
-            background: white;
-            padding: 20px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.9) 100%),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23a5d6a7" fill-opacity="0.3" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,138.7C960,139,1056,117,1152,112C1248,107,1344,117,1392,122.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') bottom;
+            background-size: cover;
+            padding: 80px 20px 100px;
             text-align: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-bottom: 4px solid #66bb6a;
+        }
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
         }
         h1 {
-            color: #f5576c;
-            font-size: 2em;
+            color: #2e7d32;
+            font-size: clamp(2.2em, 5vw, 4em);
+            margin-bottom: 20px;
+            font-weight: 400;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.05);
         }
         .tagline {
-            color: #666;
-            margin-top: 10px;
+            color: #558b2f;
+            font-size: clamp(1em, 2.5vw, 1.3em);
             font-style: italic;
+            margin-bottom: 30px;
+        }
+        .intro {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 35px;
+            max-width: 850px;
+            margin: 30px auto 0;
+            box-shadow: 0 4px 20px rgba(46, 125, 50, 0.1);
+            border: 2px solid #a5d6a7;
+        }
+        .intro h3 {
+            color: #2e7d32;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+        .intro p {
+            color: #4a5f42;
+            line-height: 1.9;
+            margin-bottom: 15px;
+            font-size: 1.05em;
         }
         .container {
-            max-width: 1200px;
-            margin: 40px auto;
+            max-width: 1300px;
+            margin: 60px auto;
             padding: 0 20px;
+        }
+        .section-title {
+            text-align: center;
+            font-size: clamp(1.8em, 4vw, 2.5em);
+            color: #2e7d32;
+            margin-bottom: 50px;
+            font-weight: 400;
         }
         .products {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+            gap: 35px;
         }
         .product {
             background: white;
-            border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-            transition: transform 0.3s;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 6px 25px rgba(46, 125, 50, 0.12);
+            transition: all 0.4s ease;
+            border: 2px solid #e8f5e9;
         }
         .product:hover {
-            transform: translateY(-10px);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(46, 125, 50, 0.2);
+            border-color: #66bb6a;
+        }
+        .product-img {
+            width: 100%;
+            height: 280px;
+            overflow: hidden;
+            position: relative;
+            background: #f1f8f4;
+        }
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .product:hover .product-img img {
+            transform: scale(1.08);
+        }
+        .badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: #66bb6a;
+            color: white;
+            padding: 8px 18px;
+            border-radius: 25px;
+            font-size: 0.85em;
+            font-weight: 600;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+        .eco-icon {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 45px;
+            height: 45px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+        }
+        .product-info {
+            padding: 30px;
         }
         .product h3 {
-            color: #f5576c;
+            color: #2e7d32;
             margin-bottom: 15px;
+            font-size: 1.4em;
+            font-weight: 600;
         }
         .product p {
-            color: #666;
-            line-height: 1.6;
+            color: #5d6d53;
+            line-height: 1.9;
+            margin-bottom: 18px;
+        }
+        .features {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+        .features li {
+            color: #6d7d63;
+            padding: 8px 0;
+            padding-left: 28px;
+            position: relative;
+            font-size: 0.95em;
+        }
+        .features li::before {
+            content: '🌱';
+            position: absolute;
+            left: 0;
+            font-size: 16px;
+        }
+        .price-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+            border-top: 2px solid #e8f5e9;
         }
         .price {
-            color: #f093fb;
-            font-size: 1.5em;
-            font-weight: bold;
-            margin-top: 15px;
+            color: #2e7d32;
+            font-size: 1.8em;
+            font-weight: 700;
         }
-        .special {
-            background: #fff5f7;
-            border-left: 4px solid #f5576c;
-            padding: 10px;
-            margin-top: 10px;
-            font-size: 0.9em;
+        .buy-btn {
+            background: linear-gradient(135deg, #66bb6a 0%, #43a047 100%);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(102, 187, 106, 0.3);
+        }
+        .buy-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 187, 106, 0.4);
+        }
+        @media (max-width: 768px) {
+            header {
+                padding: 50px 20px 70px;
+            }
+            .intro {
+                padding: 25px;
+            }
+            .products {
+                gap: 25px;
+            }
+            .product-img {
+                height: 220px;
+            }
+            .product-info {
+                padding: 20px;
+            }
+            .price {
+                font-size: 1.5em;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>💝 Quà Tặng Độc Nhất</h1>
-        <p class="tagline">Món quà duy nhất dành cho người đặc biệt</p>
+        <div class="header-content">
+            <h1>🌿 EARTH FRIENDLY LIVING</h1>
+            <p class="tagline">Hành trình xanh - Khởi đầu từ những lựa chọn nhỏ</p>
+            <div class="intro">
+                <h3>Cam Kết Của Chúng Tôi</h3>
+                <p>Mỗi năm, hơn 8 triệu tấn nhựa đổ ra đại dương. Chúng ta không thể thay đổi thế giới trong một ngày, nhưng có thể bắt đầu từ chính ngôi nhà của mình. Mỗi sản phẩm chúng tôi lựa chọn đều được kiểm chứng về nguồn gốc, quy trình sản xuất bền vững và khả năng phân hủy sinh học.</p>
+                <p><strong>100% sản phẩm thuần chay, không thử nghiệm trên động vật, bao bì có thể tái chế hoặc phân hủy hoàn toàn.</strong></p>
+            </div>
+        </div>
     </header>
     
     <div class="container">
+        <h2 class="section-title">Sản Phẩm Bền Vững</h2>
         <div class="products">
             <div class="product">
-                <h3>Đèn Ngủ 3D Khắc Chân Dung</h3>
-                <p>In hình chân dung lên đèn LED 3D. Ánh sáng ấm áp, thiết kế độc đáo làm quà tặng sinh nhật, kỷ niệm.</p>
-                <div class="special">✨ Tặng kèm hộp quà sang trọng</div>
-                <div class="price">399.000đ</div>
+                <div class="product-img">
+                    <img src="https://bizweb.dktcdn.net/100/333/236/products/thiao-herbal-dau-goi-thao-duoc-04-bfc7ac55-fbe9-48b1-913e-b64efba21eab.jpg?v=1648202222397" alt="Dầu gội dạng bánh">
+                    <span class="badge">100% Vegan</span>
+                    <span class="eco-icon">♻️</span>
+                </div>
+                <div class="product-info">
+                    <h3>Dầu Gội Thảo Dược</h3>
+                    <p>Dầu gội từ dầu dừa hữu cơ, tinh dầu bưởi và thảo dược thiên nhiên. Không sulfate, paraben hay hóa chất tổng hợp.</p>
+                    <ul class="features">
+                        <li>Phân hủy sinh học 100% trong 30 ngày</li>
+                        <li>Bao bì giấy kraft tái chế</li>
+                        <li>Phù hợp mọi loại tóc, an toàn cho da nhạy cảm</li>
+                    </ul>
+                    <div class="price-section">
+                        <div class="price">159.000đ</div>
+                        <button class="buy-btn">Mua Ngay</button>
+                    </div>
+                </div>
             </div>
             
             <div class="product">
-                <h3>Ví Da Khắc Tên Cao Cấp</h3>
-                <p>Da bò thật 100%, khắc tên/chữ ký bằng laser. Sang trọng, bền đẹp theo năm tháng, quà tặng ý nghĩa.</p>
-                <div class="special">✨ Miễn phí khắc tên</div>
-                <div class="price">649.000đ</div>
+                <div class="product-img">
+                    <img src="https://ongtre.com.vn/wp-content/uploads/2021/06/ban-chai-tre-sp001.jpg" alt="Bàn chải tre">
+                    <span class="badge">Zero Waste</span>
+                    <span class="eco-icon">🎋</span>
+                </div>
+                <div class="product-info">
+                    <h3>Bộ Bàn Chải Tre</h3>
+                    <p>Bàn chải từ tre moso tự nhiên, lông bàn chải than hoạt tính kháng khuẩn. Thay thế hoàn hảo cho nhựa dùng một lần.</p>
+                    <ul class="features">
+                        <li>Tre tự phân hủy sau 3-6 tháng</li>
+                        <li>Túi vải lanh đựng sang trọng</li>
+                    </ul>
+                    <div class="price-section">
+                        <div class="price">129.000đ</div>
+                        <button class="buy-btn">Mua Ngay</button>
+                    </div>
+                </div>
             </div>
             
             <div class="product">
-                <h3>Tranh Ghép Hình Puzzle Ảnh</h3>
-                <p>In ảnh kỷ niệm lên puzzle 1000 mảnh. Vừa chơi vừa nhớ, hoàn thành để treo tường trang trí.</p>
-                <div class="special">✨ Chất liệu gỗ cao cấp</div>
-                <div class="price">289.000đ</div>
+                <div class="product-img">
+                    <img src="https://bizweb.dktcdn.net/100/045/202/products/b8a302bf262a9e74c73b.jpg?v=1730792917353" alt="Ly giữ nhiệt">
+                    <span class="badge">Custom Made</span>
+                    <span class="eco-icon">☕</span>
+                </div>
+                <div class="product-info">
+                    <h3>Ly Giữ Nhiệt Inox Khắc Tên</h3>
+                    <p>Bình giữ nhiệt inox 304 lõi đồng nguyên chất, công nghệ chân không kép. Giữ nóng 12h, giữ lạnh 24h. Khắc laser tên hoặc thông điệp ý nghĩa theo yêu cầu.</p>
+                    <ul class="features">
+                        <li>Dung tích 500ml, thiết kế cầm tay tiện lợi</li>
+                        <li>Không chứa BPA, an toàn tuyệt đối</li>
+                        <li>Mỗi ly tiết kiệm ~500 ly nhựa/năm</li>
+                    </ul>
+                    <div class="price-section">
+                        <div class="price">329.000đ</div>
+                        <button class="buy-btn">Mua Ngay</button>
+                    </div>
+                </div>
             </div>
             
             <div class="product">
-                <h3>Vòng Cổ Khắc Ngày Kỷ Niệm</h3>
-                <p>Bạc 925 nguyên chất, khắc ngày đặc biệt. Thiết kế tối giản, thanh lịch, thể hiện tình cảm sâu sắc.</p>
-                <div class="special">✨ Bảo hành vĩnh viễn</div>
-                <div class="price">799.000đ</div>
+                <div class="product-img">
+                    <img src="https://product.hstatic.net/200000460455/product/tui_vai_canvas_form_ngang_3s_33x36x7cm__cai__7d2ea4a8f13c4b56a6e7bffb461d1ce9_master.png" alt="Túi vải canvas">
+                    <span class="badge">Organic</span>
+                    <span class="eco-icon">🌾</span>
+                </div>
+                <div class="product-info">
+                    <h3>Túi Vải Canvas Thời Trang</h3>
+                    <p>Túi xách từ vải canvas cotton hữu cơ GOTS, nhuộm màu thực vật. Chịu lực 15kg, thiết kế tối giản Hàn Quốc. Bền đẹp, càng dùng càng có hồn.</p>
+                    <ul class="features">
+                        <li>Cotton 100% không hóa chất</li>
+                        <li>Sản xuất công bằng, thợ thủ công được trả lương xứng đáng</li>
+                        <li>Có thể giặt máy, sử dụng trên 5 năm</li>
+                    </ul>
+                    <div class="price-section">
+                        <div class="price">189.000đ</div>
+                        <button class="buy-btn">Mua Ngay</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product">
+                <div class="product-img">
+                    <img src="https://bizweb.dktcdn.net/100/182/839/products/hop-com-lua-mach-3-ta-ng-lunch-900ml-5.jpg?v=1625226127417" alt="Hộp cơm lúa mạch">
+                    <span class="badge">Biodegradable</span>
+                    <span class="eco-icon">🌾</span>
+                </div>
+                <div class="product-info">
+                    <h3>Hộp Cơm Lúa Mạch & Tre Tự Nhiên</h3>
+                    <p>Hộp đựng thực phẩm từ sợi lúa mạch và tre thiên nhiên, an toàn tuyệt đối. Ngăn đôi tiện lợi, nắp đậy kín chống tràn. Dùng được lò vi sóng và tủ lạnh.</p>
+                    <ul class="features">
+                        <li>Chịu nhiệt -20°C đến 120°C</li>
+                        <li>Phân hủy hoàn toàn sau 90 ngày</li>
+                        <li>Dung tích 1000ml, phù hợp cả gia đình</li>
+                    </ul>
+                    <div class="price-section">
+                        <div class="price">149.000đ</div>
+                        <button class="buy-btn">Mua Ngay</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product">
+                <div class="product-img">
+                    <img src="https://assets.unileversolutions.com/v1/134202413.jpg" alt="Xà phòng thủ công">
+                    <span class="badge">Handmade</span>
+                    <span class="eco-icon">🧼</span>
+                </div>
+                <div class="product-info">
+                    <h3>Xà Phòng Thủ Công Thiên Nhiên</h3>
+                    <p>Xà phòng làm thủ công từ dầu dừa, dầu oliu và tinh dầu organic. Không chất tạo màu, tạo mùi tổng hợp. Dưỡng ẩm sâu, làm sạch nhẹ nhàng cho da nhạy cảm.</p>
+                    <ul class="features">
+                        <li>Bộ 3 mùi hương: Lavender, Bưởi, Trà xanh</li>
+                        <li>Cân nặng 100g/bánh, dùng 1-2 tháng</li>
+                        <li>Bao bì giấy kraft in hình minh họa tay</li>
+                    </ul>
+                    <div class="price-section">
+                        <div class="price">199.000đ</div>
+                        <button class="buy-btn">Mua Ngay</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
